@@ -51,38 +51,47 @@ this way, every turn our function decides the farestposition and moves on that a
 **Chasers** have a few steps to work.
 ● **playChaser** : this function takes the chaser numberas an input and moves the
 chaser on the game board.
+
 ● **trainModel:** This function takes the chaser numberas parameter and trains a model
 to find the shortest path about accessing the Runner.It returns a Q matrix which help
 us to find shortest path on map.
+
 ● **createBoardList:** this function converts every pieceinto a relation tuple and returns
 a list of tuples.
-○ For example, Assume that on map[3][5] and [3][6] thereis no X block. We
-convert these blocks like (35, 36) and (36,35). Withthis way we can say
-moving 35 to 36 and 36 to 35 is valid.
-○ Note that, I have added +1 for x value. Otherwise,map[0][10] and map[1][0]
-are equal and it creates a hack jump point for ourchasers.
-**● createGraph:** This method takes the boardlist responseand creates a graph of
+  ○ For example, Assume that on map[3][5] and [3][6] thereis no X block. We
+  convert these blocks like (35, 36) and (36,35). Withthis way we can say
+  moving 35 to 36 and 36 to 35 is valid.
+  ○ Note that, I have added +1 for x value. Otherwise,map[0][10] and map[1][0]
+  are equal and it creates a hack jump point for ourchasers.
+
+● **createGraph:** This method takes the boardlist responseand creates a graph of
 possible paths.
 
 
-```
+![image](https://user-images.githubusercontent.com/9320341/120070589-f64e8a80-c093-11eb-8bf7-23f34ae1c3be.png)
+
+
 ● initializeRewardMatrix : this function takes ‘G’ as graph and targetPosition which is
 Runner. it returns a matrix by creating a reward map.
+
 ● initializeQMatrix : this function takes ‘G’ as graphand returns a Q matrix.
+
 ● learner : this function takes exploration rate, learningrate, discount factor of learning,
 G as Graph, Q as Q matrix and R as rewarding matrix.Then it fills the Q matrix
 based on the learning process.
 ○ Note: For our chasers we have different learning rateson the project.
 Therefore, we expect different behaviour when moving.
+
 ● shortest_path : When we have trained Q matrix basedon the chaser type, we call
 shortest_path function with the current position ofchaser, current position of runner
 and Q matrix which is created by trainModel function.This function returns the
 shortest path steps. This response has numbers like30 - 20 -10 -11. These nodes
 exist on our graph. Then, we have a matrix where itshows the real coordinates of the
 returned number. We take the real x and y coordinatesand move the chasers.
-● calculateEarnedPoint : calculates the Manhattan distancebetween chaser and
+
+● calculateEarnedPoint : calculates the Manhattan distance between chaser and
 runner and sets the chaser's point.
-```
+
 # References
 
 ```
