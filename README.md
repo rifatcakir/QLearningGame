@@ -1,4 +1,5 @@
 ## Game play explanation
+![image](https://user-images.githubusercontent.com/9320341/120070561-d1f2ae00-c093-11eb-88d5-b8b595db9b0b.png)
 
 Consider the environment above. There are three agentsin the environment. C1 and C2 are
 the chasers and R is trying to run away from them.The initial positions of the agents are
