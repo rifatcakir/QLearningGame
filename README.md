@@ -71,25 +71,25 @@ possible paths.
 ![image](https://user-images.githubusercontent.com/9320341/120070589-f64e8a80-c093-11eb-8bf7-23f34ae1c3be.png)
 
 
-● initializeRewardMatrix : this function takes ‘G’ as graph and targetPosition which is
+● **initializeRewardMatrix** : this function takes ‘G’ as graph and targetPosition which is
 Runner. it returns a matrix by creating a reward map.
 
-● initializeQMatrix : this function takes ‘G’ as graphand returns a Q matrix.
+● **initializeQMatrix** : this function takes ‘G’ as graphand returns a Q matrix.
 
-● learner : this function takes exploration rate, learningrate, discount factor of learning,
+● **learner** : this function takes exploration rate, learningrate, discount factor of learning,
 G as Graph, Q as Q matrix and R as rewarding matrix.Then it fills the Q matrix
 based on the learning process.
 ○ Note: For our chasers we have different learning rateson the project.
 Therefore, we expect different behaviour when moving.
 
-● shortest_path : When we have trained Q matrix basedon the chaser type, we call
+● **shortest_path** : When we have trained Q matrix basedon the chaser type, we call
 shortest_path function with the current position ofchaser, current position of runner
 and Q matrix which is created by trainModel function.This function returns the
 shortest path steps. This response has numbers like30 - 20 -10 -11. These nodes
 exist on our graph. Then, we have a matrix where itshows the real coordinates of the
 returned number. We take the real x and y coordinatesand move the chasers.
 
-● calculateEarnedPoint : calculates the Manhattan distance between chaser and
+● **calculateEarnedPoint** : calculates the Manhattan distance between chaser and
 runner and sets the chaser's point.
 
 # References
